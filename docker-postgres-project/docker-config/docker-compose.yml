@@ -1,0 +1,17 @@
+name: docker-postgres-project
+services:
+    postgres:
+        container_name: postgres-teste
+        ports:
+            - 5433:5432
+        environment:
+            - POSTGRES_PASSWORD=postgres
+        image: postgres
+    pgadmin4:
+        container_name: pgadmin-1
+        ports:
+            - 15432:80
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=teste@gmail.com
+            - PGADMIN_DEFAULT_PASSWORD=postgres
+        image: dpage/pgadmin4
